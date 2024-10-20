@@ -1,0 +1,41 @@
+legend {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+  
+  .bar-completed {
+    fill: #7CBA58; 
+  }
+  
+  .bar-pending {
+    fill: #C4C4C4; 
+  }
+  
+  text {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+  }
+  
+  rect {
+    stroke-width: 1;
+    stroke: #000; 
+  }
+  
+  line {
+    stroke: lightgray;
+    stroke-width: 1;
+    
+  }
+
+  .legend rect {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+  .legend text {
+    font-size: 12px;
+    fill: #000;
+  }
+  
+  

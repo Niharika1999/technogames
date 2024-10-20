@@ -1,0 +1,19 @@
+figure {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+  }
+  
+  svg {
+    font-family: Arial, sans-serif;
+  }
+  
+  path {
+    stroke-linecap: round;
+  }
+  
+  circle {
+    transition: r 0.25s;
+  }
+ 
+  

@@ -1,0 +1,50 @@
+.course-info {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.course-header {
+  font-weight: lighter-bold;
+  margin-bottom: 5px;
+}
+
+.course-data {
+  font-size: 15px;
+}
+
+.credit-list {
+  list-style: none;
+  padding: 0;
+}
+
+
+.badge {
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+.outcomes-container .badge {
+  background-color: #a6c890; 
+  color: black;
+  
+}
+
+.mapped-container .badge {
+  background-color: #2f6896;
+}
+
+.outcomes-container,
+.mapped-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 5px;
+  
+}
+
+.outcomes-container .badge,
+.mapped-container .badge {
+  flex: 0 0 33.33%;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
