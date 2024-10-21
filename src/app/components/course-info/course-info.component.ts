@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CourseInfoComponent implements OnInit{
 
-  courseData: any;
+  courseData: any = {};
 
   constructor(private http: HttpClient) {}
 

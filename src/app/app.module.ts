@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 import { CourseInfoComponent } from './components/course-info/course-info.component';
@@ -13,7 +12,6 @@ import { AssessmentProgressComponent } from './components/assessment-progress/as
 import { StudentAttendanceComponent } from './components/student-attendance/student-attendance.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
@@ -38,7 +36,6 @@ import { CourseStatsComponent } from './components/course-stats/course-stats.com
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NgbModule,
     HttpClientModule,
     MatCardModule,
     MatListModule,
@@ -47,7 +44,6 @@ import { CourseStatsComponent } from './components/course-stats/course-stats.com
     MatIconModule,
     MatTableModule,
     MatDividerModule,
-    NgxChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
