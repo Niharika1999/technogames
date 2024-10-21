@@ -2,7 +2,19 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
 This project that implements a dashboard for visualizing student attendance and performance. The project consists of three major components as highlighted in the design provided via the Figma prototype.
 
-# Overview
+# Table of Contents
+- [Overview](#overview)
+- [Prerequisites](#prerequisites)
+- [Features](#features)
+- [Technologies](#technologies)
+- [Installation](#installation)
+- [Responsive Design](#responsive-design)
+- [Project Structure](#project-structure)
+- [Key Components](#key-components)
+- [Mock Data](#mock-data)
+- [Further Help](#further-help)
+
+## Overview
 This application recreates the dashboard UI from the provided design in Figma. It is responsive, allowing it to adjust across mobile, tablet, and desktop views. The application includes:
  - A chart for visualizing student attendance across several weeks.
  - A bar graph for assessing student performance in various assignments.
@@ -10,31 +22,31 @@ This application recreates the dashboard UI from the provided design in Figma. I
  
 The application uses hardcoded JSON data for the graphs and data display, simulating a real backend response.
 
-# Prerequisites
+## Prerequisites
 To run this project locally, you need the following installed:
- - Node.js (v12+)
- - Angular CLI (v12+)
- - Git
+ - Node.js (v12+):  Check by running the command ```node -v``` or download from `https://nodejs.org`.
+ - Angular CLI (v12+): Check by running the commad ```ng version``` or install by following the command ```npm install -g @angular/cli```
+ - Git: Check by running the command ```git --version``` or install `https://github.com/git-guides/install-git` and clone the repository
 
-# Features
+## Features
 Responsive Layout: Adapts to mobile, tablet, and desktop screens.
  - Graphical Representation: Line and bar charts for visualizing data (attendance and assessment).
  - Clean and Modular: Code is organized into four distinct components.
  - No Console Errors: Clean output and error-free code.
 
-# Technologies
- - Angular: Frontend framework used for building the UI.
- - HTML & CSS: For markup and styling the components.
- - D3.js: Chart library used for generating graphs).
- - JSON: Simulated backend data is hardcoded as JSON.
+## Technologies
+ - **Angular**: Frontend framework used for building the UI.
+ - **HTML & CSS**: For markup and styling the components.
+ - **D3.js**: Chart library used for generating graphs).
+ - **JSON**: Simulated backend data is hardcoded as JSON.
 
-# Installation
- 1. Cloning the repository: https://github.com/Niharika1999/technogames.git
+## Installation
+ 1. Cloning the repository: `https://github.com/Niharika1999/technogames.git` or use the command ```gh repo clone Niharika1999/technogames```
  2. Changing the command line to the repository: cd technogames
- 3. Installing dependencies: npm install
- 4. Running the Project: ng serve (Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.)
+ 3. Installing dependencies: ```npm install```
+ 4. Running the Project: ```ng serve``` (Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.)
 
- # Responsive Design
+## Responsive Design
 The dashboard layout is designed to adjust dynamically based on screen size. The CSS media queries ensure that the components resize appropriately when viewed on different devices.
 
  - Desktop View: Full-size charts and program outcomes.
@@ -42,7 +54,7 @@ The dashboard layout is designed to adjust dynamically based on screen size. The
  - Mobile View: Components stack vertically and resize to fit smaller screens.
 To manually test responsiveness, use browser developer tools and switch to different screen sizes.
     
-# Project Structure
+## Project Structure
 Here's an overview of the folder structure:
  ```technogames-dashboard/
     ├── src/
