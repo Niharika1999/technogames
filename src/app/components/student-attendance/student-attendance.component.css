@@ -1,34 +1,55 @@
-figure {
+/* General figure styling */
+figure#line {
   margin: 0 auto;
   width: 50%;
-  max-width: 50%; 
+  max-width: 50%;
   text-align: center;
-  font-family: 'Helvetica Neue', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 9px;
-  line-height: 18px;
-  color: #2C384B;
-  box-sizing: border-box; 
+}
+
+
+
+/* Styling for the grid lines */
+.line-grid {
+  stroke: #ccc;
+  stroke-width: 1;
+}
+
+/* Styling for the main line */
+.line-path {
+  fill: none;
+  stroke: #9F40CE;
+  stroke-width: 2;
+}
+
+/* Styling for the circles (data points) */
+.line-circle {
+  fill: #212121;
+}
+
+/* Styling for the dashed projection line */
+.line-dashed {
+  stroke: #9F40CE;
+  stroke-width: 2;
+  stroke-dasharray: 4;
 }
 
 @media screen and (max-width: 1200px) {
-  figure {
-    font-size: 1.5vw; 
+  figure#line {
+    font-size: 1.5vw;
     line-height: 2vw;
   }
 }
 
 @media screen and (max-width: 768px) {
-  figure {
+  figure#line {
     font-size: 1.2rem;
     line-height: 1.8rem;
   }
 }
 
 @media screen and (max-width: 480px) {
-  figure {
-    font-size: 1rem; 
+  figure#line {
+    font-size: 1rem;
     line-height: 1.5rem;
   }
 }

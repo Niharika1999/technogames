@@ -3,7 +3,6 @@
   display: flex;
   justify-content: flex-start;
   gap: 10px;
-  color: #2C384B;
 }
 
 /* Stats Box */
@@ -28,10 +27,7 @@
 }
 
 .course-stat .label {
-  font-family: 'Helvetica Neue', sans-serif;
-  font-weight: 400;
   font-size: 12px;
-  line-height: 18px;
 }
 
 .course-stat .value {
