@@ -1,16 +1,16 @@
-<div class="main-container">
-  <app-course-info></app-course-info>
+<div class="main-container  d-flex flex-wrap">
+  <app-course-info class="left-side col-lg-2 col-md-12"></app-course-info>
 
-  <div class="right-side">
+  <div class="right-side col-lg-8 col-md-12 d-flex flex-column">
     <!-- Course Stats -->
-    <app-course-stats></app-course-stats>
+    <app-course-stats class="mb-1" ></app-course-stats>
 
     <!-- Assessment Progress Title -->
-    <h4>Assessment Progress</h4>
+    <h4 class="mb-1">Assessment Progress</h4>
     <app-assessment-progress></app-assessment-progress>
 
     <!-- Student's Attendance Title -->
-    <h4>Student's Attendance</h4>
+    <h4 class="mb-1">Student's Attendance</h4>
     <app-student-attendance></app-student-attendance>
   </div>
 </div>

@@ -16,7 +16,7 @@ export class CourseInfoComponent implements OnInit{
   ngOnInit(): void {
     this.fetchCourseData();
   }
-
+//Fectching Data from JSON file
   fetchCourseData(): void {
     this.http.get<any>('assets/data/test-data.json').subscribe(
       data => {

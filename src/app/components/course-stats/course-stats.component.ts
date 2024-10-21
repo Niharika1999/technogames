@@ -10,7 +10,7 @@ export class CourseStatsComponent implements OnInit {
   courseData: any = {};
 
   constructor(private http: HttpClient) {}
-
+  //Fetching Data from JSON file
   ngOnInit(): void {
     this.http.get('assets/data/test-data.json').subscribe((data: any) => {
       this.courseData = data.courseData;
