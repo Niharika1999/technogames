@@ -20,9 +20,12 @@ interface LegendData {
 export class AssessmentProgressComponent {
   private data: any[] = [];
   private svg: any;
-  private margin = {top: 30, right: 10, bottom: 20, left: 50};
-  private width = 750 - this.margin.left - this.margin.right;
-  private height = 250 - this.margin.top - this.margin.bottom;
+  private margin = {top: 30, right: 10, bottom: 20, left: 30};
+  //private width = 750 - this.margin.left - this.margin.right;
+  private width!: number;
+  // private height = 250 - this.margin.top - this.margin.bottom;
+  private height!: number;
+  private resizeListener: any;
 
   constructor(private http: HttpClient, private elementRef: ElementRef) { }
 
@@ -33,16 +36,32 @@ export class AssessmentProgressComponent {
       this.addLegend();
       this.drawBars(this.data);
     });
+    this.resizeListener = () => this.updateChartOnResize();
+    window.addEventListener('resize', this.resizeListener);
+  }
+
+  ngOnDestroy(): void {
+    window.removeEventListener('resize', this.resizeListener);
   }
 
   private createSvg(): void {
-    this.svg = d3.select(this.elementRef.nativeElement)
-      .select("figure#bar")
-      .append("svg")
-      .attr("width", this.width + this.margin.left + this.margin.right)
-      .attr("height", this.height + this.margin.top + this.margin.bottom)
-      .append("g")
-      .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
+    const figure = d3.select(this.elementRef.nativeElement).select("figure#bar");
+    this.width = parseInt(figure.style('width'), 10) - this.margin.left - this.margin.right;
+
+    // Adjust height based on width with different ratios for different screen sizes
+    if (this.width < 500) {
+      this.height = this.width / 1.5; // Taller chart for very small screens
+    } else {
+      this.height = this.width / 2; // Standard aspect ratio
+    }
+
+    figure.selectAll('*').remove();
+
+    this.svg = figure.append('svg')
+      .attr('width', this.width + this.margin.left + this.margin.right)
+      .attr('height', this.height + this.margin.top + this.margin.bottom)
+      .append('g')
+      .attr('transform', 'translate(' + this.margin.left + ',' + this.margin.top + ')');
   }
  
   private drawBars(data: AssessmentData[]): void {
@@ -130,6 +149,12 @@ export class AssessmentProgressComponent {
       .attr('y', 12)  
       .text((d: LegendData) => d.name)
       .attr('alignment-baseline', 'middle');
+  }
+  private updateChartOnResize(): void {
+   
+    this.createSvg();
+    this.addLegend();
+    this.drawBars(this.data);
   }
 
 }

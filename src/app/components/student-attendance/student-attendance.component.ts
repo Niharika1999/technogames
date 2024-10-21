@@ -10,9 +10,13 @@ import { HttpClient } from '@angular/common/http';
 export class StudentAttendanceComponent {
   private data: any[] = [];
   private svg: any;
-  private margin = { top: 10, right: 10, bottom: 30, left: 50 };
-  private width = 750 - this.margin.left - this.margin.right;
-  private height = 250 - this.margin.top - this.margin.bottom;
+  private margin = { top: 10, right: 0, bottom: 30, left: 30 };
+  // private width = 750 - this.margin.left - this.margin.right;
+  // private height = 250 - this.margin.top - this.margin.bottom;
+  private width!: number;
+  private height!: number;
+  private resizeListener: any;
+
 
   constructor(private http: HttpClient, private elementRef: ElementRef) {}
 
@@ -22,12 +26,28 @@ export class StudentAttendanceComponent {
       this.createSvg();
       this.drawLine(this.data);
     });
+    this.resizeListener = () => this.updateChartOnResize();
+    window.addEventListener('resize', this.resizeListener);
+  }
+  ngOnDestroy(): void {
+    window.removeEventListener('resize', this.resizeListener);
   }
 
   private createSvg(): void {
-    this.svg = d3.select(this.elementRef.nativeElement)
-      .select('figure#line')
-      .append('svg')
+    const figure = d3.select(this.elementRef.nativeElement).select("figure#line");
+
+    this.width = parseInt(figure.style('width'), 10) - this.margin.left - this.margin.right;
+
+    if (this.width < 500) {
+      this.height = this.width / 1.2 - this.margin.top - this.margin.bottom; // More height for smaller screens
+  } else {
+      this.height = this.width / 2 - this.margin.top - this.margin.bottom; // Maintain a standard aspect ratio for larger screens
+  }
+
+
+    figure.selectAll('*').remove();
+
+    this.svg = figure.append('svg')
       .attr('width', this.width + this.margin.left + this.margin.right)
       .attr('height', this.height + this.margin.top + this.margin.bottom)
       .append('g')
@@ -98,4 +118,8 @@ export class StudentAttendanceComponent {
       .attr('stroke-dasharray', '4');
   }
 
+  private updateChartOnResize(): void {
+    this.createSvg();
+    this.drawLine(this.data);
+  }
 }

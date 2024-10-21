@@ -1,7 +1,7 @@
 figure {
   margin: 0 auto;
-  width: 100%;  /* Ensures the figure takes full width of the parent container */
-  max-width: 100%; /* Prevent exceeding container */
+  width: 50%;
+  max-width: 50%; 
   text-align: center;
   font-family: 'Helvetica Neue', sans-serif;
   font-style: normal;
@@ -9,14 +9,13 @@ figure {
   font-size: 9px;
   line-height: 18px;
   color: #2C384B;
-  box-sizing: border-box; /* Prevent overflow due to padding */
+  box-sizing: border-box; 
 }
 
 @media screen and (max-width: 1200px) {
   figure {
     font-size: 1.5vw; 
     line-height: 2vw;
-    width: 90%;  /* Reduce the width for medium screens */
   }
 }
 
@@ -24,7 +23,6 @@ figure {
   figure {
     font-size: 1.2rem;
     line-height: 1.8rem;
-    width: 95%;  /* Further reduce width for smaller screens */
   }
 }
 
@@ -32,11 +30,5 @@ figure {
   figure {
     font-size: 1rem; 
     line-height: 1.5rem;
-    width: 100%;  /* Full width for very small screens */
   }
-}
-
-#line {
-  height: auto;
-  width: 100%; /* Make sure the graph takes the full width of its container */
 }

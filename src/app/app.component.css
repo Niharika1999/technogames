@@ -33,7 +33,7 @@ app-student-attendance {
 h4 {
   font-size: 1.125rem;
   font-weight: bold;
-  margin-bottom: 8px;
+  margin-bottom: 1px;
   color: #2C384B;
 }
 
@@ -67,7 +67,7 @@ h4 {
 
   h4 {
     font-size: 0.875rem;
-    margin-bottom: 6px;
+    margin-bottom: 1px;
   }
 
   app-assessment-progress,
@@ -91,7 +91,7 @@ h4 {
 
   h4 {
     font-size: 0.75rem;
-    margin-bottom: 5px;
+    margin-bottom: 1px;
   }
 
   app-assessment-progress,

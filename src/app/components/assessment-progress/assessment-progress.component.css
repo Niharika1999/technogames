@@ -1,7 +1,7 @@
 figure {
   margin: 0 auto;
-  width: 100%;
-  max-width: 100%; /* Prevent exceeding container */
+  width: 50%;
+  max-width: 50%; 
   text-align: center;
   font-family: 'Helvetica Neue', sans-serif;
   font-style: normal;
@@ -9,7 +9,7 @@ figure {
   font-size: 9px;
   line-height: 18px;
   color: #2C384B;
-  box-sizing: border-box; /* Prevent overflow due to padding */
+  box-sizing: border-box; 
 }
 
 @media screen and (max-width: 1200px) {
