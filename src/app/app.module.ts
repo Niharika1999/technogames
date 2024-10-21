@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+
 
 import { CourseInfoComponent } from './components/course-info/course-info.component';
 import { AssessmentProgressComponent } from './components/assessment-progress/assessment-progress.component';
@@ -45,6 +47,7 @@ import { CourseStatsComponent } from './components/course-stats/course-stats.com
     MatIconModule,
     MatTableModule,
     MatDividerModule,
+    NgxChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

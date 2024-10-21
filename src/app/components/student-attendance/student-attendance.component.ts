@@ -75,7 +75,7 @@ export class StudentAttendanceComponent {
     this.svg.append('path')
       .datum(filteredData)
       .attr('fill', 'none')
-      .attr('stroke', '#9C27B0')
+      .attr('stroke', '#9F40CE')
       .attr('stroke-width', 2)
       .attr('d', line);
 
@@ -93,8 +93,9 @@ export class StudentAttendanceComponent {
       .attr('x2', (x('21/10') || 0) + x.bandwidth() / 2)
       .attr('y1', y(filteredData[filteredData.length - 1].attendance))
       .attr('y2', y(55))
-      .attr('stroke', '#9C27B0')
+      .attr('stroke', '#9F40CE')
       .attr('stroke-width', 2)
       .attr('stroke-dasharray', '4');
   }
+
 }

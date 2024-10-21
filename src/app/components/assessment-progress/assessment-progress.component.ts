@@ -74,7 +74,7 @@ export class AssessmentProgressComponent {
         .attr('x2', this.width)    
         .attr('y1', y(tickValue)) 
         .attr('y2', y(tickValue))  
-        .attr('stroke', 'lightgray')
+        .attr('stroke', '#E8E8E8')
         .attr('stroke-width', 1)
     });
   
@@ -87,7 +87,7 @@ export class AssessmentProgressComponent {
       .attr('y', (d: AssessmentData) => y(d.completed))
       .attr('width', x.bandwidth() / 2)
       .attr('height', (d: AssessmentData) => this.height - y(d.completed))
-      .attr('fill', '#94a97f'); 
+      .attr('fill', '#91B07C'); 
 
    
     this.svg.selectAll('bars-pending')
@@ -98,12 +98,12 @@ export class AssessmentProgressComponent {
       .attr('y', (d: AssessmentData) => y(d.pending))
       .attr('width', x.bandwidth() / 2)
       .attr('height', (d: AssessmentData) => this.height - y(d.pending))
-      .attr('fill', 'lightgray'); 
+      .attr('fill', '#E8E8E8'); 
   }
   private addLegend(): void {
     const legendData: LegendData[] = [
-      { name: 'Completed', color: '#94a97f' },
-      { name: 'Pending', color: 'lightgray' }
+      { name: 'Completed', color: '#91B07C' },
+      { name: 'Pending', color: '#E8E8E8' }
     ];
 
     

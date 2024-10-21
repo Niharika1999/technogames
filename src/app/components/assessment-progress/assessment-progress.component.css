@@ -1,41 +1,34 @@
-legend {
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-  }
-  
-  .bar-completed {
-    fill: #7CBA58; 
-  }
-  
-  .bar-pending {
-    fill: #C4C4C4; 
-  }
-  
-  text {
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-  }
-  
-  rect {
-    stroke-width: 1;
-    stroke: #000; 
-  }
-  
-  line {
-    stroke: lightgray;
-    stroke-width: 1;
-    
-  }
+figure {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%; /* Prevent exceeding container */
+  text-align: center;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 9px;
+  line-height: 18px;
+  color: #2C384B;
+  box-sizing: border-box; /* Prevent overflow due to padding */
+}
 
-  .legend rect {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
+@media screen and (max-width: 1200px) {
+  figure {
+    font-size: 1.5vw; 
+    line-height: 2vw;
   }
-  
-  .legend text {
-    font-size: 12px;
-    fill: #000;
+}
+
+@media screen and (max-width: 768px) {
+  figure {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
   }
-  
-  
+}
+
+@media screen and (max-width: 480px) {
+  figure {
+    font-size: 1rem; 
+    line-height: 1.5rem;
+  }
+}
