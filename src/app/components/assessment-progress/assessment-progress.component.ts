@@ -141,7 +141,7 @@ export class AssessmentProgressComponent {
       .data(legendData)
       .enter()
       .append('rect')
-      .attr('x', (d: LegendData, i: number) => i * 140)
+      .attr('x', (d: LegendData, i: number) => i * 100)
       .attr('class', 'legend-rect') 
       .attr('fill', (d: LegendData) => d.color); 
   
@@ -150,10 +150,10 @@ export class AssessmentProgressComponent {
       .data(legendData)
       .enter()
       .append('text')
-      .attr('x', (d: LegendData, i: number) => i * 140 + 25)
+      .attr('x', (d: LegendData, i: number) => i * 100 + 30)
       .attr('y', 12)
       .text((d: LegendData) => d.name)
-      .attr('class', 'legend-text'); // Use class for text styling
+      .attr('class', 'legend-text'); 
   }
 
   // Function: To update the size of graphs to the screen size(Responsive design)
