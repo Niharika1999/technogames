@@ -70,7 +70,7 @@ export class StudentAttendanceComponent {
   
     const y = d3.scaleLinear()
       .domain([0, 100])
-      .range([this.height, 0]);
+      .range([this.height, this.margin.top]);
   
     //Appends to x-axis
     this.svg.append('g')

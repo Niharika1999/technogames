@@ -1,0 +1,123 @@
+{
+  "courseData": {
+    "courseCode": "BA3102",
+    "courseName": "Quantitative techniques",
+    "courseType": "Program Elective",
+    "coursePeriod": "I",
+    "credits": {
+      "lecture": 3,
+      "tutorial": 0,
+      "practical": 1,
+      "project": 0
+    },
+    "courseOutcomes": [
+      "CO2",
+      "CO4",
+      "CO5",
+      "CO7",
+      "CO13",
+      "CO14"
+    ],
+    "mappedToCourse": [
+      "PO7",
+      "PO8",
+      "PO10",
+      "PO12"
+    ],
+    "totalStudents": 102,
+    "courseAverageMark": "85%"
+  },
+  "assessmentProgressData": [
+    {
+      "name": "Assignment",
+      "pending": 25,
+      "completed": 75
+    },
+    {
+      "name": "Quiz",
+      "pending": 40,
+      "completed": 60
+    },
+    {
+      "name": "Presentation",
+      "pending": 25,
+      "completed": 75
+    },
+    {
+      "name": "Lab",
+      "pending": 50,
+      "completed": 50
+    },
+    {
+      "name": "Viva",
+      "pending": 90,
+      "completed": 10
+    }
+  ],
+  "attendanceData": [
+    {
+      "week": "1/7",
+      "attendance": 25
+    },
+    {
+      "week": "8/7",
+      "attendance": 50
+    },
+    {
+      "week": "15/7",
+      "attendance": 25
+    },
+    {
+      "week": "22/7",
+      "attendance": 75
+    },
+    {
+      "week": "29/7",
+      "attendance": 50
+    },
+    {
+      "week": "5/8",
+      "attendance": 60
+    },
+    {
+      "week": "12/8",
+      "attendance": 75
+    },
+    {
+      "week": "19/8",
+      "attendance": 60
+    },
+    {
+      "week": "26/8",
+      "attendance": 90
+    },
+    {
+      "week": "2/9",
+      "attendance": 100
+    },
+    {
+      "week": "9/9",
+      "attendance": 75
+    },
+    {
+      "week": "16/9",
+      "attendance": 50
+    },
+    {
+      "week": "23/9",
+      "attendance": 75
+    },
+    {
+      "week": "30/9",
+      "attendance": 50
+    },
+    {
+      "week": "14/10",
+      "attendance": 55
+    },
+    {
+      "week": "21/10",
+      "attendance": null
+    }
+  ]
+}

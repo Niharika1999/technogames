@@ -9,14 +9,15 @@
 
 .right-side {
   flex: 3;
-  gap: 15px;
+  /* gap: 15px; */
   width: 100%;
+  
 }
 
 app-assessment-progress,
 app-student-attendance {
   background-color: #fff;
-  padding: 10px;
+  /* padding: 4px; */
   border-radius: 8px;
   border: 1px solid #ccc;
   max-width: 100%;
@@ -113,7 +114,7 @@ h4 {
 
   app-assessment-progress,
   app-student-attendance {
-    padding: 8px;
+    padding: 4px;
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   }
