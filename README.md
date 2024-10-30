@@ -10,6 +10,8 @@ This project that implements a dashboard for visualizing student attendance and 
 - [Installation](#installation)
 - [Responsive Design](#responsive-design)
 - [Project Structure](#project-structure)
+- [Frontend] (#frontend)
+- [Backend] (#backend)
 - [Key Components](#key-components)
 - [Mock Data](#mock-data)
 - [Further Help](#further-help)
@@ -24,9 +26,13 @@ The application uses hardcoded JSON data for the graphs and data display, simula
 
 ## Prerequisites
 To run this project locally, you need the following installed:
- - Node.js (v12+):  Check by running the command ```node -v``` or download from `https://nodejs.org`.
- - Angular CLI (v12+): Check by running the commad ```ng version``` or install by following the command ```npm install -g @angular/cli```
- - Git: Check by running the command ```git --version``` or install `https://github.com/git-guides/install-git` and clone the repository
+- Git: Check by running the command ```git --version``` or install `https://github.com/git-guides/install-git` and clone the repository
+    ## Frontend:
+    - Node.js (v12+):  Check by running the command ```node -v``` or download from `https://nodejs.org`.
+    - Angular CLI (v12+): Check by running the commad ```ng version``` or install by following the command ```npm install -g @angular/cli```
+    ## Backend:
+    - Java (v8+): Check by running the command ```java -version``` or download from `https://www.oracle.com/java/technologies/downloads/#java11?er=221886`
+    - Maven 3.6+: Check by running the command ```mvn -version``` or download from `https://maven.apache.org/install.html`
 
 ## Features
 Responsive Layout: Adapts to mobile, tablet, and desktop screens.
@@ -43,8 +49,10 @@ Responsive Layout: Adapts to mobile, tablet, and desktop screens.
 ## Installation
  1. Cloning the repository: `https://github.com/Niharika1999/technogames.git` or use the command ```gh repo clone Niharika1999/technogames```
  2. Changing the command line to the repository: cd technogames
- 3. Installing dependencies: ```npm install```
- 4. Running the Project: ```ng serve``` (Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.)
+ 3. Installing dependencies: ```npm install``` and ```mvn clean install```
+ 4. Running the Project: 
+    - Frontend: ```ng serve``` (Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.)
+    -Backend: ```mvn spring-boot:run```
 
 ## Responsive Design
 The dashboard layout is designed to adjust dynamically based on screen size. The CSS media queries ensure that the components resize appropriately when viewed on different devices.
@@ -55,6 +63,7 @@ The dashboard layout is designed to adjust dynamically based on screen size. The
 To manually test responsiveness, use browser developer tools and switch to different screen sizes.
     
 ## Project Structure
+### Frontend
 Here's an overview of the folder structure:
  ```technogames-dashboard/
     ├── src/
@@ -79,6 +88,31 @@ Here's an overview of the folder structure:
     ├── package.json                      # Dependencies and scripts
     ├── README.md                         # Project README file
 ```
+
+### Backend
+```technogames-backend/
+├── src/
+│   ├── main/
+│   │   ├── java/com/example/technogamesbackend/
+│   │   │   ├── models/                     # Java classes representing data models
+│   │   │   │   ├── AssessmentProgressData.java  # Model for student assessment progress
+│   │   │   │   ├── AttendanceData.java          # Model for tracking student attendance
+│   │   │   │   ├── CourseData.java              # Model for storing course information
+│   │   │   │   ├── Credits.java                 # Model for handling course credits
+│   │   │   │   ├── TestData.java                # Model for mock test data
+│   │   │   ├── DataController.java              # REST controller for data operations
+│   │   │   ├── DataService.java                 # Service class for business logic
+│   │   │   ├── TechnogamesBackendApplication.java  # Main application class
+│   │   │   ├── WebConfig.java                   # Configuration class for CORS and other settings
+│   │   ├── resources/
+│   │   │   ├── static/                          
+│   │   │   ├── templates/                       
+│   │   │   ├── application.properties           # Spring Boot configuration properties
+│   │   │   ├── test-data.json                   # JSON file containing mock test data
+│   ├── test/                                   
+├── .mvn/                                        # Maven wrapper directory
+├── pom.xml                                      # Maven project file
+```
 ## Key Components
 1. Assessment Progress (assessment-progress):
     Displays student performance data through bar charts.
@@ -90,7 +124,10 @@ Here's an overview of the folder structure:
     Shows student attendance over multiple weeks in a line chart.
 
 ## Mock Data
-Data used for testing is located in the assets/data/test-data.json file.
+The application fetches data from a backend service where data is dynamically provided through an API. The backend server manages and serves JSON data for visualizing student attendance, assessment progress, course details, and credits.
+### API:
+```/api/data```: This single API endpoint serves all required data for the application. The frontend makes a request to this endpoint to retrieve the JSON response.
+
 
 ## Further help
 
