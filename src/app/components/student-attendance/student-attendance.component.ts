@@ -1,6 +1,8 @@
 import { Component, OnInit, ElementRef, ViewEncapsulation } from '@angular/core';
 import * as d3 from 'd3';
 import { HttpClient } from '@angular/common/http';
+import {DataService} from '../services/data.service';
+
 
 @Component({
   selector: 'app-student-attendance',
@@ -19,14 +21,25 @@ export class StudentAttendanceComponent {
   private resizeListener: any;
 
 
-  constructor(private http: HttpClient, private elementRef: ElementRef) {}
+  constructor(private dataService: DataService,  private elementRef: ElementRef) {}
 
   ngOnInit(): void {
-    this.http.get('assets/data/test-data.json').subscribe((data: any) => {
-      this.data = data.attendanceData;
-      this.createSvg();
-      this.drawLine(this.data);
-    });
+    // this.http.get('assets/data/test-data.json').subscribe((data: any) => {
+    //   this.data = data.attendanceData;
+    //   this.createSvg();
+    //   this.drawLine(this.data);
+    // });
+
+    this.dataService.getCourseData().subscribe(
+      (data) => {
+        this.data = data.attendanceData;
+        this.createSvg();
+        this.drawLine(this.data);
+      },
+      (error) => {
+        console.error('Error fetching assessment data:', error);
+      }
+    );
     this.resizeListener = () => this.updateChartOnResize();
     window.addEventListener('resize', this.resizeListener);
   }
