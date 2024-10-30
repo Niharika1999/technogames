@@ -1,6 +1,7 @@
 import { Component, OnInit  } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+//Importing Services
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-course-info',
@@ -11,18 +12,19 @@ export class CourseInfoComponent implements OnInit{
 
   courseData: any = {};
 
-  constructor(private http: HttpClient) {}
+  //constructor(private http: HttpClient) {}
+  constructor (private dataservice: DataService){}
 
   ngOnInit(): void {
     this.fetchCourseData();
   }
 //Fectching Data from JSON file
   fetchCourseData(): void {
-    this.http.get<any>('assets/data/test-data.json').subscribe(
-      data => {
+    this.dataservice.getCourseData().subscribe(
+      (data) => {
         this.courseData = data.courseData;
       },
-      error => {
+      (error) => {
         console.error('Error fetching course data:', error);
       }
     );

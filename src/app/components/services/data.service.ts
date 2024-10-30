@@ -43,12 +43,12 @@ export interface TestData {
   providedIn: 'root'
 })
 export class DataService {
-  private baseUrl = 'http://localhost:8080/api/data'; // Replace with your actual API URL
+  private baseUrl = 'http://localhost:8080/api/data'; 
 
   constructor(private http: HttpClient) {}
 
   // Method to get course data
-  getCourseData(): Observable<CourseData[]> {
-    return this.http.get<CourseData[]>(`${this.baseUrl}/api/data`); // Replace with the correct API endpoint
+  getCourseData(): Observable<any> {
+    return this.http.get<any>(this.baseUrl);
   }
 }

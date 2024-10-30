@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef, ViewEncapsulation } from '@angular/core';
 import * as d3 from 'd3';
 import { HttpClient } from '@angular/common/http';
+import {DataService} from '../services/data.service';
 
 // Interface for the assessment data structure
 interface AssessmentData {
@@ -30,15 +31,27 @@ export class AssessmentProgressComponent {
   private height!: number;
   private resizeListener: any;
 
-  constructor(private http: HttpClient, private elementRef: ElementRef) { }
-
+  //constructor(private http: HttpClient, private elementRef: ElementRef) { }
+  constructor(private dataService: DataService,  private elementRef: ElementRef) {}
+  
   ngOnInit(): void {
-    this.http.get('assets/data/test-data.json').subscribe((data: any) => {
-      this.data = data.assessmentProgressData;
-      this.createSvg();
-      this.addLegend();
-      this.drawBars(this.data);
-    });
+    // this.http.get('assets/data/test-data.json').subscribe((data: any) => {
+    //   this.data = data.assessmentProgressData;
+    //   this.createSvg();
+    //   this.addLegend();
+    //   this.drawBars(this.data);
+    // });
+    this.dataService.getCourseData().subscribe(
+      (data) => {
+        this.data = data.assessmentProgressData;
+        this.createSvg();
+        this.addLegend();
+        this.drawBars(this.data);
+      },
+      (error) => {
+        console.error('Error fetching assessment data:', error);
+      }
+    );
     this.resizeListener = () => this.updateChartOnResize();
     window.addEventListener('resize', this.resizeListener);
   }
