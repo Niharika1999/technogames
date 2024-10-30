@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class StudentAttendanceComponent {
   private data: any[] = [];
   private svg: any;
-  private margin = { top: 20, right: 5, bottom: 30, left: 50 }; 
+  private margin = { top: 20, right: 5, bottom: 30, left: 70 }; 
   // private width = 750 - this.margin.left - this.margin.right;
   // private height = 250 - this.margin.top - this.margin.bottom;
   private width!: number;
@@ -38,7 +38,7 @@ export class StudentAttendanceComponent {
   private createSvg(): void {
     const figure = d3.select(this.elementRef.nativeElement).select("figure#line");
     //Dynamic allocation of chart dimensions
-    this.width = parseInt(figure.style('width'), 10) - this.margin.left - this.margin.right;
+    this.width = parseInt(figure.style('width'), 10) * 1.25 - this.margin.left - this.margin.right;
     this.height = this.width / 2 - this.margin.top - this.margin.bottom;
     //Adjusting the graoh dimensions for smaller screens sizes 
     if (this.width < 500) {
@@ -54,7 +54,18 @@ export class StudentAttendanceComponent {
     .attr('height', this.height + this.margin.top + this.margin.bottom)
     .append('g')
     .attr('transform', 'translate(' + this.margin.left + ',' + this.margin.top + ')');
-  }
+
+    this.svg.append('text')
+    .attr('class', 'axis-label')  // Apply CSS class
+    .attr('transform', `translate(${this.width / 2}, ${this.height + this.margin.bottom - 5})`)
+    .text('Weeks');
+
+  // Add Y-Axis Label
+  this.svg.append('text')
+    .attr('class', 'axis-label')  // Apply CSS class
+    .attr('transform', `translate(${-(this.margin.left / 2)}, ${this.height / 2}) rotate(-90)`)
+    .text('Attendance');
+}
   // Function: Draws lines on the chart depending on the attendance data 
   private drawLine(data: any[]): void {
     //missing attendance data is assigned with 0 for better plotting
@@ -79,6 +90,8 @@ export class StudentAttendanceComponent {
    //Appends to y-axis
     this.svg.append('g')
       .call(d3.axisLeft(y).tickFormat(d => d + '%'));
+
+    
   
     //X-axis grids
     this.svg.append('g')

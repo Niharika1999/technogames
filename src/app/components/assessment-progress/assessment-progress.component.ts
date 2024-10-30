@@ -24,7 +24,7 @@ interface LegendData {
 export class AssessmentProgressComponent {
   private data: any[] = [];
   private svg: any;
-  private margin = { top: 30, right: 0, bottom: 20, left: 50 }; 
+  private margin = { top: 35, right: 0, bottom: 20, left: 50 }; 
   //private width = 750 - this.margin.left - this.margin.right;
   private width!: number;
   // private height = 250 - this.margin.top - this.margin.bottom;
@@ -64,8 +64,8 @@ export class AssessmentProgressComponent {
   private createSvg(): void {
     const figure = d3.select(this.elementRef.nativeElement).select("figure#bar");
     //Dynamic allocation of chart dimensions
-    this.width = parseInt(figure.style('width'), 10) - this.margin.left - this.margin.right;
-  
+    //this.width = parseInt(figure.style('width'), 10) - this.margin.left - this.margin.right;
+    this.width = parseInt(figure.style('width'), 10) * 1.25 - this.margin.left - this.margin.right;
     //Adjusting the graoh dimensions for smaller screens sizes 
     if (this.width < 500) {
       this.height = this.width / 1.5; 

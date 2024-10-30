@@ -35,6 +35,20 @@ figure#line {
   stroke-dasharray: 4;
 }
 
+/* X-axis and Y-axis labels */
+.axis-label {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 9px;
+  line-height: 18px;
+  color: #2C384B;
+  vertical-align: middle;
+}
+
+
 @media screen and (max-width: 1200px) {
   figure#line {
     font-size: 1.5vw;
