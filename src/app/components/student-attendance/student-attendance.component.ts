@@ -34,9 +34,26 @@ export class StudentAttendanceComponent {
     window.removeEventListener('resize', this.resizeListener);
   }
 
+  private setMarginsBasedOnScreenSize(): void {
+    const screenWidth = window.innerWidth;
+  
+    if (screenWidth < 480) {
+      // Small screen margins
+      this.margin = { top: 5, right: 5, bottom: 20, left: 50 };
+    } else if (screenWidth < 768) {
+      // Medium screen margins
+      this.margin = { top: 10, right: 10, bottom: 25, left: 40 };
+    } else {
+      // Large screen margins
+      this.margin = { top: 15, right: 15, bottom: 30, left: 50 };
+    }
+  }
+
   // Function: initializes the chart using D3.js
   private createSvg(): void {
     const figure = d3.select(this.elementRef.nativeElement).select("figure#line");
+
+    this.setMarginsBasedOnScreenSize();
     //Dynamic allocation of chart dimensions
     this.width = parseInt(figure.style('width'), 10) * 1.25 - this.margin.left - this.margin.right;
     this.height = this.width / 2 - this.margin.top - this.margin.bottom;
@@ -57,13 +74,13 @@ export class StudentAttendanceComponent {
 
     this.svg.append('text')
     .attr('class', 'axis-label')  // Apply CSS class
-    .attr('transform', `translate(${this.width / 2}, ${this.height + this.margin.bottom - 5})`)
+    .attr('transform', `translate(${this.width / 2}, ${this.height + this.margin.bottom -5})`)
     .text('Weeks');
 
   // Add Y-Axis Label
   this.svg.append('text')
     .attr('class', 'axis-label')  // Apply CSS class
-    .attr('transform', `translate(${-(this.margin.left / 2)}, ${this.height / 2}) rotate(-90)`)
+    .attr('transform', `translate(${-(this.margin.left / 2)-10}, ${this.height / 2}) rotate(-90)`)
     .text('Attendance');
 }
   // Function: Draws lines on the chart depending on the attendance data 

@@ -8,8 +8,6 @@ figure#line {
   align-items: flex-start;
 }
 
-
-
 /* Styling for the grid lines */
 .line-grid {
   stroke: #ccc;
@@ -53,6 +51,7 @@ figure#line {
   figure#line {
     font-size: 1.5vw;
     line-height: 2vw;
+    width: 75%;
   }
 }
 
@@ -60,6 +59,7 @@ figure#line {
   figure#line {
     font-size: 1.2rem;
     line-height: 1.8rem;
+   
   }
 }
 
@@ -67,5 +67,6 @@ figure#line {
   figure#line {
     font-size: 1rem;
     line-height: 1.5rem;
+   
   }
 }

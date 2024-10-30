@@ -60,9 +60,25 @@ export class AssessmentProgressComponent {
     window.removeEventListener('resize', this.resizeListener);
   }
 
+  private setMarginsBasedOnScreenSize(): void {
+    const screenWidth = window.innerWidth;
+  
+    if (screenWidth < 480) {
+      // Small screen margins
+      this.margin = { top: 35, right: 5, bottom: 20, left: 30 };
+    } else if (screenWidth < 768) {
+      // Medium screen margins
+      this.margin = { top: 35, right: 10, bottom: 25, left: 40 };
+    } else {
+      // Large screen margins
+      this.margin = { top: 35, right: 15, bottom: 30, left: 50 };
+    }
+  }
+
   // Function: initializes the chart using D3.js
   private createSvg(): void {
     const figure = d3.select(this.elementRef.nativeElement).select("figure#bar");
+    this.setMarginsBasedOnScreenSize();
     //Dynamic allocation of chart dimensions
     //this.width = parseInt(figure.style('width'), 10) - this.margin.left - this.margin.right;
     this.width = parseInt(figure.style('width'), 10) * 1.25 - this.margin.left - this.margin.right;
@@ -89,6 +105,7 @@ export class AssessmentProgressComponent {
       .range([0, this.width])
       .domain(data.map(d => d.name))
       .padding(0.1);
+      
   
     // Appends x-axis
     this.svg.append('g')
